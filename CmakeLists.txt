@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(IMGUI VERSION 0.1.0)
+
+add_executable(IMGUI main.cpp)
+
+
+find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
+target_link_libraries(IMGUI PRIVATE sfml-system sfml-network sfml-graphics sfml-window)
+
+find_package(imgui CONFIG REQUIRED)
+target_link_libraries(IMGUI PRIVATE imgui::imgui)
+
+find_package(ImGui-SFML CONFIG REQUIRED)
+target_link_libraries(IMGUI PRIVATE ImGui-SFML::ImGui-SFML)
